@@ -1,5 +1,4 @@
 export type ProjectStatus = "planning" | "active" | "on_hold" | "completed";
-export type UserRole = "admin" | "project_manager" | "engineer" | "accountant";
 export type AttendanceStatus = "present" | "absent" | "half_day" | "overtime";
 export type ExpenseCategory =
   | "materials"
@@ -18,6 +17,9 @@ export interface Project {
   endDate: string;
   status: ProjectStatus;
   budget: number;
+  totalExpenses: number;
+  progress: number;
+  location: string;
   createdAt: string;
 }
 
@@ -28,6 +30,7 @@ export interface Expense {
   amount: number;
   description: string;
   date: string;
+  receiptUrl?: string;
 }
 
 export interface Material {
@@ -47,12 +50,13 @@ export interface Worker {
   fullName: string;
   role: string;
   dailyWage: number;
-  contactPhone: string;
+  phone: string;
 }
 
 export interface Attendance {
   id: string;
   workerId: string;
+  workerName: string;
   projectId: string;
   date: string;
   status: AttendanceStatus;

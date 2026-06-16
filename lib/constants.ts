@@ -1,46 +1,85 @@
-import { NavItem, ProjectStatus, ExpenseCategory, UserRole } from "./types";
+import { NavItem, ProjectStatus, ExpenseCategory } from "./types";
+import {
+  LayoutDashboard,
+  FolderKanban,
+  BarChart3,
+  FileText,
+  Settings,
+  Package,
+  Wrench,
+  Users,
+  DollarSign,
+  HardHat,
+} from "lucide-react";
 
 export const NAV_ITEMS: NavItem[] = [
-  { title: "Dashboard", href: "/", icon: "LayoutDashboard" },
+  {
+    title: "Dashboard",
+    href: "/",
+    icon: "LayoutDashboard",
+  },
   {
     title: "Projects",
     href: "/projects",
     icon: "FolderKanban",
-    children: [
-      { title: "All Projects", href: "/projects", icon: "List" },
-      { title: "New Project", href: "/projects/new", icon: "Plus" },
-    ],
   },
-  { title: "Reports", href: "/reports", icon: "BarChart3" },
-  { title: "Documents", href: "/documents", icon: "FileText" },
-  { title: "Settings", href: "/settings", icon: "Settings" },
+  {
+    title: "Materials",
+    href: "/materials",
+    icon: "Package",
+  },
+  {
+    title: "Workers",
+    href: "/workers",
+    icon: "HardHat",
+  },
+  {
+    title: "Reports",
+    href: "/reports",
+    icon: "BarChart3",
+  },
+  {
+    title: "Documents",
+    href: "/documents",
+    icon: "FileText",
+  },
+  {
+    title: "Settings",
+    href: "/settings",
+    icon: "Settings",
+  },
 ];
 
-export const PROJECT_STATUSES: Record<
+export const PROJECT_STATUS_OPTIONS: Record<
   ProjectStatus,
   { label: string; color: string }
 > = {
-  planning: { label: "Planning", color: "bg-blue-100 text-blue-800" },
-  active: { label: "Active", color: "bg-green-100 text-green-800" },
-  on_hold: { label: "On Hold", color: "bg-yellow-100 text-yellow-800" },
-  completed: { label: "Completed", color: "bg-gray-100 text-gray-800" },
+  planning: {
+    label: "Planning",
+    color: "bg-blue-100 text-blue-700 border-blue-200",
+  },
+  active: {
+    label: "Active",
+    color: "bg-emerald-100 text-emerald-700 border-emerald-200",
+  },
+  on_hold: {
+    label: "On Hold",
+    color: "bg-amber-100 text-amber-700 border-amber-200",
+  },
+  completed: {
+    label: "Completed",
+    color: "bg-slate-100 text-slate-700 border-slate-200",
+  },
 };
 
-export const EXPENSE_CATEGORIES: Record<
+export const EXPENSE_CATEGORY_OPTIONS: Record<
   ExpenseCategory,
-  { label: string; icon: string }
+  { label: string; color: string }
 > = {
-  materials: { label: "Materials", icon: "Package" },
-  labor: { label: "Labor", icon: "Users" },
-  equipment: { label: "Equipment", icon: "Wrench" },
-  subcontractor: { label: "Subcontractor", icon: "Building2" },
-  permits: { label: "Permits", icon: "FileCheck" },
-  other: { label: "Other", icon: "MoreHorizontal" },
-};
-
-export const ROLES: Record<UserRole, string> = {
-  admin: "Administrator",
-  project_manager: "Project Manager",
-  engineer: "Engineer",
-  accountant: "Accountant",
+  materials: { label: "Materials", color: "#F97316" },
+  labor: { label: "Labor", color: "#3B82F6" },
+  equipment: { label: "Equipment", color: "#8B5CF6" },
+  subcontractor: { label: "Subcontractor", color: "#EC4899" },
+  permits: { label: "Permits", color: "#14B8A6" },
+  other: { label: "Other", color: "#64748B" },
 };

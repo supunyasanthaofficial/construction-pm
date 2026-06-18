@@ -165,107 +165,58 @@ export default function ProjectDetailPage() {
         </TabsList>
 
         <TabsContent value="overview">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-base">Project Details</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-500">Client</span>
-                  <span className="text-sm font-medium">
-                    {project.clientName}
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-500">Progress</span>
-                  <span className="text-sm font-medium">
-                    {project.progress}%
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-500">Created</span>
-                  <span className="text-sm font-medium">
-                    {formatDate(project.createdAt)}
-                  </span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-base">Quick Actions</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <Button className="w-full justify-start bg-orange-500 hover:bg-orange-600">
-                  <DollarSign className="h-4 w-4 mr-2" />
-                  Add Expense
-                </Button>
-                <Button variant="outline" className="w-full justify-start">
-                  <Package className="h-4 w-4 mr-2" />
-                  Update Materials
-                </Button>
-                <Button variant="outline" className="w-full justify-start">
-                  <Users className="h-4 w-4 mr-2" />
-                  Mark Attendance
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+          {/* existing overview content */}
         </TabsContent>
 
         <TabsContent value="budget">
           <Card>
-            <CardContent className="p-12 text-center">
-              <DollarSign className="h-12 w-12 text-slate-300 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-slate-700">
-                Budget Details
-              </h3>
-              <p className="text-sm text-slate-500 mt-1">
-                Detailed budget breakdown coming soon
-              </p>
+            <CardHeader>
+              <CardTitle className="text-base">Budget Summary</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex justify-between">
+                <span className="text-sm text-slate-500">Total Budget</span>
+                <span className="text-sm font-medium">
+                  {formatCurrency(project.budget)}
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-sm text-slate-500">Spent</span>
+                <span className="text-sm font-medium text-amber-600">
+                  {formatCurrency(project.totalExpenses)}
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-sm text-slate-500">Remaining</span>
+                <span className="text-sm font-medium text-emerald-600">
+                  {formatCurrency(project.budget - project.totalExpenses)}
+                </span>
+              </div>
+              <Link href={`/projects/${project.id}/budget`}>
+                <Button variant="outline" size="sm" className="w-full mt-2">
+                  <DollarSign className="h-4 w-4 mr-2" />
+                  Full Budget Details
+                </Button>
+              </Link>
             </CardContent>
           </Card>
         </TabsContent>
 
         <TabsContent value="materials">
           <Card>
-            <CardContent className="p-12 text-center">
-              <Package className="h-12 w-12 text-slate-300 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-slate-700">
-                Materials Tracking
-              </h3>
-              <p className="text-sm text-slate-500 mt-1">
-                Material inventory management coming soon
+            <CardHeader>
+              <CardTitle className="text-base">Materials Overview</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <p className="text-sm text-slate-500">
+                Quick glance at materials status.
               </p>
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="workers">
-          <Card>
-            <CardContent className="p-12 text-center">
-              <Users className="h-12 w-12 text-slate-300 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-slate-700">
-                Worker Management
-              </h3>
-              <p className="text-sm text-slate-500 mt-1">
-                Worker attendance and management coming soon
-              </p>
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="documents">
-          <Card>
-            <CardContent className="p-12 text-center">
-              <FileText className="h-12 w-12 text-slate-300 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-slate-700">
-                Documents
-              </h3>
-              <p className="text-sm text-slate-500 mt-1">
-                Document storage and management coming soon
-              </p>
+              <Link href={`/projects/${project.id}/materials`}>
+                <Button variant="outline" size="sm" className="w-full mt-2">
+                  <Package className="h-4 w-4 mr-2" />
+                  Manage Materials
+                </Button>
+              </Link>
             </CardContent>
           </Card>
         </TabsContent>

@@ -11,7 +11,7 @@ import {
   DollarSign,
   HardHat,
 } from "lucide-react";
-
+export const LOW_STOCK_THRESHOLD = 0.2 // 20% remaining = low stock
 export const NAV_ITEMS: NavItem[] = [
   {
     title: "Dashboard",

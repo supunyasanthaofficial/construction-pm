@@ -1,3 +1,4 @@
+import type { AttendanceStatus } from "./types";
 import { NavItem, ProjectStatus, ExpenseCategory } from "./types";
 import {
   LayoutDashboard,
@@ -11,7 +12,7 @@ import {
   DollarSign,
   HardHat,
 } from "lucide-react";
-export const LOW_STOCK_THRESHOLD = 0.2 // 20% remaining = low stock
+export const LOW_STOCK_THRESHOLD = 0.2; // 20% remaining = low stock
 export const NAV_ITEMS: NavItem[] = [
   {
     title: "Dashboard",
@@ -82,4 +83,13 @@ export const EXPENSE_CATEGORY_OPTIONS: Record<
   subcontractor: { label: "Subcontractor", color: "#EC4899" },
   permits: { label: "Permits", color: "#14B8A6" },
   other: { label: "Other", color: "#64748B" },
+};
+export const ATTENDANCE_STATUS_OPTIONS: Record<
+  AttendanceStatus,
+  { label: string; color: string }
+> = {
+  present: { label: "Present", color: "bg-emerald-100 text-emerald-700" },
+  absent: { label: "Absent", color: "bg-red-100 text-red-700" },
+  half_day: { label: "Half Day", color: "bg-amber-100 text-amber-700" },
+  overtime: { label: "Overtime", color: "bg-blue-100 text-blue-700" },
 };

@@ -69,3 +69,14 @@ export interface NavItem {
   icon: string;
   children?: NavItem[];
 }
+
+export interface Document {
+  id: string;
+  projectId: string;
+  name: string;
+  filePath: string; // storage path (mock for now)
+  fileType: string; // extension e.g. "pdf", "jpg"
+  fileSize: string; // human‑readable e.g. "2.4 MB"
+  uploadedBy: string;
+  uploadedAt: string; // ISO date
+}

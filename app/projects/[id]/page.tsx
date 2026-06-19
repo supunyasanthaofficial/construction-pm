@@ -164,9 +164,7 @@ export default function ProjectDetailPage() {
           </TabsTrigger>
         </TabsList>
 
-        <TabsContent value="overview">
-          {/* existing overview content */}
-        </TabsContent>
+        <TabsContent value="overview"></TabsContent>
 
         <TabsContent value="budget">
           <Card>
@@ -215,6 +213,24 @@ export default function ProjectDetailPage() {
                 <Button variant="outline" size="sm" className="w-full mt-2">
                   <Package className="h-4 w-4 mr-2" />
                   Manage Materials
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+        </TabsContent>
+        <TabsContent value="workers">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base">Worker Overview</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <p className="text-sm text-slate-500">
+                Manage workers and attendance records.
+              </p>
+              <Link href={`/projects/${project.id}/workers`}>
+                <Button variant="outline" size="sm" className="w-full mt-2">
+                  <Users className="h-4 w-4 mr-2" />
+                  Manage Workers & Attendance
                 </Button>
               </Link>
             </CardContent>

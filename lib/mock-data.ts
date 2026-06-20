@@ -1,4 +1,11 @@
-import { Project, Expense, Material, Worker, Attendance } from "./types";
+import {
+  Project,
+  Expense,
+  Material,
+  Worker,
+  Attendance,
+  Document,
+} from "./types";
 
 export const mockProjects: Project[] = [
   {
@@ -397,4 +404,47 @@ export const projectProgressData = [
   { name: "Galle Marina", progress: 55, budget: 1800, spent: 950 },
   { name: "Jaffna CC", progress: 100, budget: 450, spent: 438 },
   { name: "Negombo WF", progress: 5, budget: 1200, spent: 45 },
+];
+
+export const mockDocuments: Document[] = [
+  {
+    id: "1",
+    projectId: "1",
+    name: "Architectural Plans.pdf",
+    filePath: "#",
+    fileType: "pdf",
+    fileSize: "4.2 MB",
+    uploadedBy: "Kasun Perera",
+    uploadedAt: "2025-10-20",
+  },
+  {
+    id: "2",
+    projectId: "1",
+    name: "Budget Estimate.xlsx",
+    filePath: "#",
+    fileType: "xlsx",
+    fileSize: "1.1 MB",
+    uploadedBy: "Kasun Perera",
+    uploadedAt: "2025-10-22",
+  },
+  {
+    id: "3",
+    projectId: "1",
+    name: "Site Photo.jpg",
+    filePath: "#",
+    fileType: "jpg",
+    fileSize: "3.5 MB",
+    uploadedBy: "Nuwan Jayawardena",
+    uploadedAt: "2025-11-01",
+  },
+  {
+    id: "4",
+    projectId: "2",
+    name: "Permit Approval.pdf",
+    filePath: "#",
+    fileType: "pdf",
+    fileSize: "0.5 MB",
+    uploadedBy: "Kasun Perera",
+    uploadedAt: "2025-11-10",
+  },
 ];

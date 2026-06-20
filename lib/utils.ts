@@ -30,3 +30,6 @@ export function getInitials(name: string): string {
     .toUpperCase()
     .slice(0, 2);
 }
+export function printReport() {
+  window.print();
+}

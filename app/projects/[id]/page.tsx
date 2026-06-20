@@ -236,6 +236,24 @@ export default function ProjectDetailPage() {
             </CardContent>
           </Card>
         </TabsContent>
+        <TabsContent value="documents">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base">Documents</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <p className="text-sm text-slate-500">
+                View and upload project documents.
+              </p>
+              <Link href={`/projects/${project.id}/documents`}>
+                <Button variant="outline" size="sm" className="w-full mt-2">
+                  <FileText className="h-4 w-4 mr-2" />
+                  Manage Documents
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+        </TabsContent>
       </Tabs>
     </div>
   );

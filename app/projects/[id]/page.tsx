@@ -162,6 +162,10 @@ export default function ProjectDetailPage() {
             <FileText className="h-4 w-4" />
             Documents
           </TabsTrigger>
+          <TabsTrigger value="reports" className="gap-2">
+            <BarChart3 className="h-4 w-4" />
+            Reports
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="overview"></TabsContent>
@@ -249,6 +253,24 @@ export default function ProjectDetailPage() {
                 <Button variant="outline" size="sm" className="w-full mt-2">
                   <FileText className="h-4 w-4 mr-2" />
                   Manage Documents
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+        </TabsContent>
+        <TabsContent value="reports">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base">Reports</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <p className="text-sm text-slate-500">
+                View detailed analytics and printable reports.
+              </p>
+              <Link href={`/projects/${project.id}/reports`}>
+                <Button variant="outline" size="sm" className="w-full mt-2">
+                  <BarChart3 className="h-4 w-4 mr-2" />
+                  Open Reports
                 </Button>
               </Link>
             </CardContent>

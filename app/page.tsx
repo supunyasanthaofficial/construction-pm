@@ -19,7 +19,7 @@ export default function DashboardPage() {
     <div className="space-y-6">
       <PageHeader
         title="Dashboard"
-        description="Welcome back, Supun! Here's your project overview for today."
+        description="Welcome back, David! Here's your project overview for today."
       />
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">

@@ -1,0 +1,22 @@
+image: node:22
+
+stages:
+  - test
+  - build
+
+cache:
+  paths:
+    - node_modules/
+
+test_project:
+  stage: test
+  script:
+    - npm ci
+    - npm run lint --if-present
+    - npm test --if-present
+
+build_project:
+  stage: build
+  script:
+    - npm ci
+    - npm run build

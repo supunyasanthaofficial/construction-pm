@@ -29,9 +29,10 @@ export function useCreateExpense() {
       const {
         data: { user },
       } = await supabase.auth.getUser();
+      if (!user) throw new Error("Not authenticated");
       const { data, error } = await supabase
         .from("expenses")
-        .insert({ ...newExpense, created_by: user!.id })
+        .insert({ ...newExpense, created_by: user.id })
         .select()
         .single();
       if (error) throw error;
@@ -41,8 +42,7 @@ export function useCreateExpense() {
       queryClient.invalidateQueries({
         queryKey: ["expenses", variables.projectId],
       });
-      // Also invalidate projects to update budget spent if needed
-      queryClient.invalidateQueries({ queryKey: ["projects"] });
+      queryClient.invalidateQueries({ queryKey: ["projects"] }); // to update budget spent
     },
   });
 }

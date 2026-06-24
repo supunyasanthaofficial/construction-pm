@@ -4,7 +4,6 @@ import type { Project } from "@/lib/types";
 
 const supabase = createClient();
 
-// Fetch all projects the user has access to (RLS handles filtering)
 export function useProjects() {
   return useQuery({
     queryKey: ["projects"],
@@ -19,7 +18,6 @@ export function useProjects() {
   });
 }
 
-// Fetch a single project by ID
 export function useProject(projectId: string) {
   return useQuery({
     queryKey: ["projects", projectId],
@@ -36,7 +34,6 @@ export function useProject(projectId: string) {
   });
 }
 
-// Create a new project
 export function useCreateProject() {
   const queryClient = useQueryClient();
   return useMutation({
@@ -46,9 +43,10 @@ export function useCreateProject() {
       const {
         data: { user },
       } = await supabase.auth.getUser();
+      if (!user) throw new Error("Not authenticated");
       const { data, error } = await supabase
         .from("projects")
-        .insert({ ...newProject, created_by: user!.id })
+        .insert({ ...newProject, created_by: user.id })
         .select()
         .single();
       if (error) throw error;
@@ -60,7 +58,6 @@ export function useCreateProject() {
   });
 }
 
-// Update a project
 export function useUpdateProject() {
   const queryClient = useQueryClient();
   return useMutation({
@@ -84,7 +81,6 @@ export function useUpdateProject() {
   });
 }
 
-// Delete a project
 export function useDeleteProject() {
   const queryClient = useQueryClient();
   return useMutation({
@@ -100,11 +96,3 @@ export function useDeleteProject() {
     },
   });
 }
-
-// export function useProject() {
-//   return useQuery({
-//          queryKey: ['projects'],
-//          queryFn: fetchProjects,
-//          staleTime: 1000 * 60 * 5
-//   })
-// }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Providers } from "./providers";
+import { DashboardShell } from "@/components/layout/dashboard-shell";
 import "./globals.css";
 
 const inter = Inter({
@@ -9,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "BuildPro - Construction Project Management",
+  title: "BuildPro - Construction Project Management & Site ERP",
   description:
-    "Manage your construction projects, budgets, materials, and workforce efficiently.",
+    "Enterprise construction management platform for tracking project budgets, live workforce attendance, site materials, and progress analytics.",
 };
 
 export default function RootLayout({
@@ -21,8 +22,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="font-sans antialiased">
-        <Providers>{children}</Providers>
+      <body className="font-sans antialiased selection:bg-orange-500 selection:text-white">
+        <Providers>
+          <DashboardShell>{children}</DashboardShell>
+        </Providers>
       </body>
     </html>
   );

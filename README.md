@@ -1,67 +1,165 @@
-# BuidPro - Construction Project Management
+# BuildPro - Construction Project Management & Site ERP
 
-![BuildPro Dashboard](public/S1.png)
+<div align="center">
+  <p><strong>Enterprise construction operations, financial tracking, workforce management, and site intelligence platform.</strong></p>
 
-A full-Stack web application for managing construction projects, built with **Next.js 16**, **React 19**, **TypeScript**, **Tailwindcss**, **shadcn/ui**, **Recharts**, **Supabase**.
+  [![Next.js](https://img.shields.io/badge/Next.js-16.2-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+  [![React](https://img.shields.io/badge/React-19.2-blue?style=flat-square&logo=react)](https://react.dev/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38bdf8?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
+  [![Supabase](https://img.shields.io/badge/Supabase-Database%20%26%20Auth-3ecf8e?style=flat-square&logo=supabase)](https://supabase.com/)
+  [![License](https://img.shields.io/badge/License-MIT-orange?style=flat-square)](LICENSE)
+</div>
 
-## Features
+---
 
-- **Dashboard** – Real‑time overview of active projects, budgets, and workers.
-- **Project Management** – Create, edit, and track projects with status, timelines, and budgets.
-- **Budget & Expense Tracking** – Record expenses by category, monitor spending against budget with visual charts.
-- **Material Management** – Track inventory (ordered, used, remaining) and low‑stock alerts.
-- **Worker & Attendance** – Register workers, mark daily attendance with statuses (Present, Absent, Half‑Day, Overtime).
-- **Document Storage** – Upload, download, and manage project files (plans, permits, photos).
-- **Reports & Analytics** – Printable project and global reports with interactive charts (budget vs actual, expense breakdown, attendance distribution).
-- **Authentication & Multi‑User** – Secure login/signup with Row Level Security (RLS) – users only see projects they belong to.
-- **Responsive Design** – Desktop‑first, fully responsive for tablets and mobiles.
+## 🏗️ Overview
 
-## Tech Stack
+**BuildPro** is a modern, high-performance Construction Project Management platform built for project managers, general contractors, site engineers, and financial controllers. It streamlines site operations, tracks multi-billion capital allocations, oversees real-time workforce attendance, monitors material inventories, and delivers actionable project analytics.
 
-| Category     | Technology                                                             |
-| ------------ | ---------------------------------------------------------------------- |
-| Frontend     | Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS, shadcn/ui |
-| Charts       | Recharts                                                               |
-| Backend / DB | Supabase (PostgreSQL, Auth, Storage, Realtime)                         |
-| State Mgmt   | TanStack Query (React Query)                                           |
-| Forms        | React Hook Form + Zod (validators ready)                               |
-| Deployment   | Vercel (frontend) + Supabase (backend)                                 |
+---
 
-## Getting Started
+## 🚀 Key Features & Modules
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+### 1. Executive Operations Dashboard
+- **Site Telemetry Banner**: Real-time operational pulse, weather conditions, safety index (100% compliance tracking), daily attendance rates, and scheduled material deliveries.
+- **Top-tier KPI Cards**: Active project counters, multi-site capital allocation meters, on-site workforce numbers, and material stock health with month-over-month trend indicators.
+- **Monthly Expense Distribution**: Interactive multi-category spending trends (Materials, Labor, Equipment, Subcontracts) with dynamic timeframe filters (YTD vs. 6-Month view) and custom frosted glass tooltips.
+- **Budget Allocation Donut**: High-fidelity Donut visualization with centered portfolio total, interactive slice inspection, and category progress bars.
+- **Project Execution & Health**: Dual-view tracker comparing physical construction progress against financial budget burn rates with risk warning flags.
+- **Critical Milestones & Deadlines**: Countdown indicators, target handover dates, and task completion metrics.
+- **Active Project Portfolio**: Live project directory with instant search, status filter tabs, client tags, and budget utilization gauges.
+- **Live Site Activity Feed**: Real-time event log tracking ready-mix concrete dispatches, safety sign-offs, and overtime logs.
 
-## Getting Started
+### 2. Multi-Project Management
+- Full project lifecycle management (Planning, Active, On Hold, Completed).
+- Client details, location geotagging, budget allocation, and schedule tracking.
+- Dedicated project sub-spaces for Budget, Materials, Workers, Documents, and Reports.
 
-First, run the development server:
+### 3. Financials & Budget Tracking
+- Categorized expense logging (Materials, Labor, Equipment, Subcontractor, Permits, Other).
+- Real-time budget variance calculation with utilization progress meters and risk warnings.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### 4. Materials & Supply Chain Control
+- Track quantities ordered, used, and warehouse stock remaining.
+- Automatic low-stock warning threshold alerts and supplier directory.
+
+### 5. Site Workforce & Attendance
+- Worker registry with role classifications (Masons, Carpenters, Electricians, Plumbers, Laborers) and wage rates.
+- Daily digital attendance marker supporting Present, Absent, Half-Day, and Overtime logs with automatic hour calculations.
+
+### 6. Document & Blueprints Vault
+- Secure cloud storage for architectural blueprints, structural engineering drawings, permits, and site photographs.
+
+### 7. Modern Enterprise Design System
+- **Dark Enterprise Sidebar**: Collapsible, viewport-locked navigation with categorized sections, badge counts, and active glow indicators.
+- **Header Bar**: Omni-search with `⌘K` keyboard shortcut, quick action drawer (`+ New Project`, `+ Log Material`, `+ Record Expense`), and live notification tray.
+- **Modern Color Palette**: High-visibility safety orange/amber accents, deep slate elevations, and clean typography.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technologies |
+| :--- | :--- |
+| **Framework** | [Next.js 16](https://nextjs.org/) (App Router, Turbopack) |
+| **UI Library** | [React 19](https://react.dev/), [shadcn/ui](https://ui.shadcn.com/), [Radix UI](https://www.radix-ui.com/) |
+| **Styling** | [Tailwind CSS v4](https://tailwindcss.com/), [tw-animate-css](https://www.npmjs.com/package/tw-animate-css) |
+| **Data Visualization** | [Recharts](https://recharts.org/) |
+| **Icons** | [Lucide React](https://lucide.dev/), [React Icons](https://react-icons.github.io/react-icons/) |
+| **Backend / Database** | [Supabase](https://supabase.com/) (PostgreSQL, Row Level Security, Auth, Storage) |
+| **Data Fetching** | [TanStack React Query v5](https://tanstack.com/query/latest) |
+| **Forms & Validation** | [React Hook Form](https://react-hook-form.com/), [Zod](https://zod.dev/) |
+
+---
+
+## 📁 Directory Structure
+
+```text
+construction-pm/
+├── app/
+│   ├── layout.tsx              # Root HTML & Providers layout
+│   ├── page.tsx                # Main Executive Dashboard
+│   ├── globals.css             # Tailwind 4 tokens, glassmorphism & scrollbar styles
+│   ├── providers.tsx           # React Query & Context providers
+│   ├── projects/               # Project listing & creation
+│   │   ├── new/                # Create project form
+│   │   └── [id]/               # Single project workspace
+│   │       ├── budget/         # Budget & expense management
+│   │       ├── materials/      # Material inventory & stock
+│   │       ├── workers/        # Site workforce & attendance
+│   │       ├── documents/      # File attachments & blueprints
+│   │       └── reports/        # Project-specific reports
+│   └── reports/                # Global portfolio analytics & print reports
+├── components/
+│   ├── layout/
+│   │   ├── dashboard-shell.tsx # Unified app shell wrapper
+│   │   ├── sidebar.tsx         # Collapsible dark enterprise sidebar
+│   │   ├── header.tsx          # Omni-search, quick actions, notifications
+│   │   └── breadcrumbs.tsx     # Route breadcrumbs
+│   ├── features/               # Domain-specific chart & list widgets
+│   ├── shared/                 # StatCard, PageHeader, StatusBadge
+│   └── ui/                     # shadcn/ui primitive components
+├── lib/
+│   ├── types.ts                # TypeScript interfaces & domain models
+│   ├── constants.ts            # Navigation items, status definitions
+│   ├── mock-data.ts            # Initial dataset for demonstration
+│   ├── utils.ts                # Currency & date formatters, cn helper
+│   └── supabase.ts             # Supabase client initialization
+└── public/                     # Static assets & icons
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🏁 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites
 
-## Learn More
+Ensure you have the following installed:
+* [Node.js](https://nodejs.org/) (version 18.17 or higher)
+* [npm](https://www.npmjs.com/), [pnpm](https://pnpm.io/), or [yarn](https://yarnpkg.com/)
 
-To learn more about Next.js, take a look at the following resources:
+### Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/supunyasanthaofficial/construction-pm.git
+   cd construction-pm
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. **Configure Environment Variables:**
+   Create a `.env.local` file in the root directory:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your-supabase-project-url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Run the Development Server:**
+   ```bash
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. **Open the Application:**
+   Navigate to [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## ⚙️ Available Scripts
+
+| Command | Description |
+| :--- | :--- |
+| `npm run dev` | Starts the Next.js development server with Turbopack |
+| `npm run build` | Builds the optimized production application |
+| `npm run start` | Runs the compiled production build |
+| `npm run lint` | Runs ESLint to check for code quality and errors |
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
